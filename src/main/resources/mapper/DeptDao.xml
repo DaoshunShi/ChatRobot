@@ -3,7 +3,7 @@
 
 <!-- 设置为IDeptDao接口方法提供sql语句配置 -->
 <mapper namespace="com.chatRobot.dao.IDeptDao">
-    <select id="selectDept" resultType="Dept" parameterMap="long">
+    <select id="selectDept" resultType="Dept" parameterType="long">
         SELECT * FROM dept WHERE id = #{id}
     </select>
 </mapper>

@@ -16,7 +16,7 @@ public class IDeptDaoTest {
     private IDeptDao dao;
 
     @Test
-    private void testSelectDept () throws Exception {
+    public void testSelectDept () throws Exception {
         long id = 1;
         Dept dept = dao.selectDept(id);
         System.out.println(dept.getName());
