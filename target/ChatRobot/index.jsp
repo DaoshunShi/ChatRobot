@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
+<%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>test</title>
+    <title>SSM测试</title>
 </head>
 <script>
     function selectUser() {
@@ -16,10 +18,9 @@
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("id=1");
     }
-
 </script>
 <body>
 <p id="test">Hello World!</p>
-<button type="button" onclick="selectUser()">查询id为1的用户信息</button>
+<button type="button" onclick="selectUser()">查询id为1的用户</button>
 </body>
 </html>

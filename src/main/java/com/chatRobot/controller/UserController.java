@@ -1,7 +1,6 @@
 package com.chatRobot.controller;
 
 import javax.servlet.http.HttpServletRequest;
-
 import com.chatRobot.model.User;
 import com.chatRobot.service.IUserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
