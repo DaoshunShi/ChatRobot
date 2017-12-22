@@ -33,16 +33,16 @@ public class IDeptDaoTest {
         }
     }
 
-//    @Test
-//    public void testInsertDept() throws Exception {
-//        Dept dept = new Dept();
-//        dept.setId(4l);
-//        dept.setName("部门名称4Test");
-//        dept.setComment("备注4Test");
-//        int result = dao.insertDept(dept);
-//        System.out.println(result);
-//        System.out.println(result>0?"写入成功":"写入失败");
-//    }
+    @Test
+    public void testInsertDept() throws Exception {
+        Dept dept = new Dept();
+        dept.setId(4l);
+        dept.setName("部门名称4Test");
+        dept.setComment("备注4Test");
+        int result = dao.insertDept(dept);
+        System.out.println(result);
+        System.out.println(result>0?"写入成功":"写入失败");
+    }
 
 //    @Test
 //    public void testDeleteDept() throws Exception {
@@ -52,16 +52,16 @@ public class IDeptDaoTest {
 //        System.out.println(result>0?"删除成功":"删除失败");
 //    }
 
-//    @Test
-//    public void testUpdateDept() throws Exception {
-//        Dept dept = new Dept();
-//        dept.setId(4);
-//        dept.setName("部门名称4 Test update");
-//        dept.setComment("备注4 Test update");
-//        int result = dao.updateDept(dept);
-//        System.out.println(result);
-//        System.out.println(result>0? "更新成功":"更新失败");
-//    }
+    @Test
+    public void testUpdateDept() throws Exception {
+        Dept dept = new Dept();
+        dept.setId(4);
+        dept.setName("部门名称4 Test update");
+        dept.setComment("备注4 Test update");
+        int result = dao.updateDept(dept);
+        System.out.println(result);
+        System.out.println(result>0? "更新成功":"更新失败");
+    }
 
 
 }
