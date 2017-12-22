@@ -6,4 +6,27 @@
     <select id="selectDept" resultType="Dept" parameterType="long">
         SELECT * FROM dept WHERE id = #{id}
     </select>
+
+    <select id="selectAll" resultType="Dept">
+        SELECT * FROM dept
+    </select>
+
+    <insert id="insertDept" parameterType="Dept" >
+        INSERT INTO dept (id, name, comment) VALUES (
+        #{id, jdbcType=INTEGER}, #{name, jdbcType=VARCHAR}, #{comment, jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <delete id="deleteDept" parameterType="long">
+        DELETE FROM dept WHERE id = #{id}
+    </delete>
+
+    <update id="updateDept" parameterType="Dept">
+        UPDATE dept
+        SET
+        name = #{name, jdbcType=VARCHAR},
+        comment = #{comment, jdbcType=VARCHAR}
+        WHERE
+        id = #{id, jdbcType=INTEGER}
+    </update>
 </mapper>
