@@ -3,14 +3,19 @@ package com.chatRobot.controller;
 import com.chatRobot.model.Dept;
 import com.chatRobot.service.IDeptService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.json.JsonArray;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/dept")
@@ -28,6 +33,60 @@ public class DeptController {
         ObjectMapper mapper = new ObjectMapper();
         response.getWriter().write(mapper.writeValueAsString(dept));
         response.getWriter().close();
+    }
+
+    @RequestMapping("/selectAllTable.do")
+    public List<Dept> selectAllTable (HttpServletRequest request, HttpServletResponse response) throws  IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
+//        Map<String, Object> param=new HashMap<String, Object>();
+//        int a=(pageNumber-1)*pageSize;
+//        int b=pageSize;
+//        param.put("a", a);
+//        param.put("b", b);
+//        param.put("name", name);
+//        param.put("age", age);
+//        return studentService.selectByFy(param);
+
+        List<Dept> deptList = new ArrayList<Dept>();
+        deptList = this.deptService.selectAll();
+        return deptList;
+
+    }
+
+    @RequestMapping("/selectAllJson.do")
+    private void ajaxGetSellRecord(HttpServletRequest request,
+                                   HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter pw = response.getWriter();
+
+//        //得到客户端传递的页码和每页记录数，并转换成int类型
+//        int pageSize = Integer.parseInt(request.getParameter("pageSize"));
+//        int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+//        String orderNum = request.getParameter("orderNum");
+//
+//        //分页查找商品销售记录，需判断是否有带查询条件
+//        List<SimsSellRecord> sellRecordList = null;
+//        sellRecordList = sellRecordService.querySellRecordByPage(pageNumber, pageSize, orderNum);
+//
+//        //将商品销售记录转换成json字符串
+//        String sellRecordJson = sellRecordService.getSellRecordJson(sellRecordList);
+//        //得到总记录数
+//        int total = sellRecordService.countSellRecord(orderNum);
+//
+//        //需要返回的数据有总记录数和行数据
+//        String json = "{\"total\":" + total + ",\"rows\":" + sellRecordJson + "}";
+//        pw.print(json);
+
+        List<Dept> deptList = new ArrayList<Dept>();
+        deptList = this.deptService.selectAll();
+
+        JSONArray listJson = JSONArray.fromObject(deptList);
+        int total = deptList.size();
+        String json = "{\"total\":" + total + ",\"rows\":" + listJson + "}";
+        pw.write(json);
     }
 
     @RequestMapping("/selectAll.do")
