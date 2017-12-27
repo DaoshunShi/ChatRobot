@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.json.JsonArray;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -55,30 +57,32 @@ public class DeptController {
 
     }
 
+    @RequestMapping("selectByFy")
+    @ResponseBody
+    public  Map<String,Object> selectByFy(int pageSize,int pageNumber,String name,Integer id, String comment){
+        /*所需参数*/
+        Map<String, Object> param=new HashMap<String, Object>();
+        int a=(pageNumber-1)*pageSize;
+        int b=pageSize;
+        param.put("a", a);
+        param.put("b", b);
+        param.put("name", name);
+        param.put("id", id);
+        if (comment!=null && comment!="") {
+            comment = "%" + comment + "%";
+        }
+        param.put("comment", comment);
+        return deptService.selectByFy(param);
+    }
+
+
+
     @RequestMapping("/selectAllJson.do")
-    private void ajaxGetSellRecord(HttpServletRequest request,
+    public void ajaxGetSellRecord(HttpServletRequest request,
                                    HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
-
-//        //得到客户端传递的页码和每页记录数，并转换成int类型
-//        int pageSize = Integer.parseInt(request.getParameter("pageSize"));
-//        int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
-//        String orderNum = request.getParameter("orderNum");
-//
-//        //分页查找商品销售记录，需判断是否有带查询条件
-//        List<SimsSellRecord> sellRecordList = null;
-//        sellRecordList = sellRecordService.querySellRecordByPage(pageNumber, pageSize, orderNum);
-//
-//        //将商品销售记录转换成json字符串
-//        String sellRecordJson = sellRecordService.getSellRecordJson(sellRecordList);
-//        //得到总记录数
-//        int total = sellRecordService.countSellRecord(orderNum);
-//
-//        //需要返回的数据有总记录数和行数据
-//        String json = "{\"total\":" + total + ",\"rows\":" + sellRecordJson + "}";
-//        pw.print(json);
 
         List<Dept> deptList = new ArrayList<Dept>();
         deptList = this.deptService.selectAll();

@@ -3,6 +3,20 @@
 
 <!-- 设置为IDeptDao接口方法提供sql语句配置 -->
 <mapper namespace="com.chatRobot.dao.IDeptDao">
+
+    <select id="selectByFy" resultType="com.chatRobot.model.Dept" parameterType="Map">
+        SELECT *
+        FROM dept
+        <if test="a!=null">
+            <where>
+                <if test="id!=null and id!=''">  id=#{id}</if>
+                <if test="name!=null and name!=''">AND name=#{name}</if>
+                <if test="comment!=null and comment!=''">AND comment like #{comment}</if>
+            </where>
+            LIMIT #{a},#{b}
+        </if>
+    </select>
+
     <select id="selectDept" resultType="Dept" parameterType="long">
         SELECT * FROM dept WHERE id = #{id}
     </select>

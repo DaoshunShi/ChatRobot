@@ -14,7 +14,7 @@
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
     <!-- bootstrap -->
-    <link rel="stylesheet" href="ootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
     <!-- 分页插件 -->
