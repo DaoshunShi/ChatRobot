@@ -6,11 +6,12 @@
   Time: 下午2:32
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>图片上传</title>
+    <title>JS写入Bootstrap Table数据</title>
     <!-- jq -->
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
 
@@ -99,7 +100,7 @@
                     {field: 'comment',title: '备注'},
                     {field: 'tool',title: '操作', align: 'center',
                         formatter:function(value,row,index){
-                            var element =
+                             var element =
                                 "<a class='edit' data-id='"+row.id +"'>编辑</a> "+
                                 "<a class='delet' data-id='"+row.id +"'>删除</a> ";
                             return element;
