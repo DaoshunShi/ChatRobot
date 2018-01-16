@@ -44,6 +44,7 @@
         <div class="col-xs-12">
             <table id="tb" class="table table-striped table-bordered table-hover" ></table>
         </div>
+
     </div>
 </div>
 <script type="text/javascript" src="js/table.js">
