@@ -52,6 +52,9 @@
     <!--<welcome-file>view/BootstrapTest.jsp</welcome-file>-->
   <!--</welcome-file-list>-->
   <welcome-file-list>
-    <welcome-file>view/TableTest.jsp</welcome-file>
+    <welcome-file>view/TableTest1.jsp</welcome-file>
   </welcome-file-list>
+  <!--<welcome-file-list>-->
+    <!--<welcome-file>view/TableJSTest.jsp</welcome-file>-->
+  <!--</welcome-file-list>-->
 </web-app>
