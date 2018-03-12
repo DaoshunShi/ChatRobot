@@ -172,44 +172,6 @@
     var dept2;
     var dept3;
     var dept4;
-    // $(function(){
-    //     $("input:button").on("click", function() {
-    //         $.ajax({
-    //             type: "POST",
-    //             url: "dept/getAllJson1",
-    //             dataType: "json",
-    //             success: function (data) {
-    //                 dept1 = data[0];
-    //                 dept2 = data[1];
-    //                 dept3 = data[2];
-    //                 dept4 = data[3];
-    //
-    //                 //给予准备好的dom，初始化echarts实例
-    //                 var myChart = echarts.init(document.getElementById('main'), 'light');
-    //                 //指定图标的配置和数据
-    //                 var option = {
-    //                     //设置全局调色板
-    //                     //color: [‘#c23531‘,‘#2f4554‘, ‘#61a0a8‘, ‘#d48265‘, ‘#91c7ae‘,‘#749f83‘,  ‘#ca8622‘, ‘#bda29a‘,‘#6e7074‘, ‘#546570‘, ‘#c4ccd3‘],
-    //                     title: {text: 'My First ECharts'},
-    //                     tooltip: {},
-    //                     legend: {
-    //                         data: ['部门']
-    //                     },
-    //                     xAxis: {data:["部门1", "部门2", "部门3", "部门4"]},
-    //                     yAxis:{},
-    //                     series: [{
-    //                         name: "部门备注",
-    //                         type: 'bar',
-    //                         data: [dept1.comment, dept2.comment, dept3.comment, dept4.comment]}]
-    //                 };
-    //
-    //                 //使用刚指定的配置项和数据显示图标
-    //                 myChart.setOption(option);
-    //             }
-    //         })
-    //
-    //     });
-    // });
     $(function(){
         $.ajax({
             type: "POST",

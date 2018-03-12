@@ -68,7 +68,12 @@
   <!--</welcome-file-list>-->
 
   <!--用echarts显示柱状图-->
+  <!--<welcome-file-list>-->
+    <!--<welcome-file>view/TableJSTest2.jsp</welcome-file>-->
+  <!--</welcome-file-list>-->
+  
+  <!--用echarts显示环形图-->
   <welcome-file-list>
-    <welcome-file>view/TableJSTest2.jsp</welcome-file>
+    <welcome-file>view/TableJSTest3.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
