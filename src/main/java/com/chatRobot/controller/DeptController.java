@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -75,6 +76,24 @@ public class DeptController {
         return deptService.selectByFy(param);
     }
 
+//    @RequestMapping("/barData")
+//    @ResponseBody
+//    public List<HashMap<String, Object>> barData(HttpServletRequest request) {
+//        /*
+//        测试数据，正式环境从数据库读取
+//         */
+//        List<Dept> deptList = new ArrayList<Dept>();
+//        deptList = this.deptService.selectAll();
+//        return deptList;
+//    }
+
+    @RequestMapping(value = "getAllJson1")
+    @ResponseBody
+    public List<Dept> getAllJson1 () {
+        List<Dept> deptList = new ArrayList<>();
+        deptList = this.deptService.selectAll();
+        return deptList;
+    }
 
 
     @RequestMapping("/selectAllJson.do")

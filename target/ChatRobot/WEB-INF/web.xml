@@ -39,19 +39,34 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+  <!--修改初始页面-->
+  <!--测试增删改查功能-->
   <!--<welcome-file-list>-->
     <!--<welcome-file>index.jsp</welcome-file>-->
   <!--</welcome-file-list>-->
+
   <!--<welcome-file-list>-->
     <!--<welcome-file>dashboard/index1.html</welcome-file>-->
   <!--</welcome-file-list>-->
   <!--<welcome-file-list>-->
     <!--<welcome-file>/WEB-INF/dashboard/index1.html</welcome-file>-->
   <!--</welcome-file-list>-->
+
+  <!--成功调用了bootstrap-->
   <!--<welcome-file-list>-->
     <!--<welcome-file>view/BootstrapTest.jsp</welcome-file>-->
   <!--</welcome-file-list>-->
+
+  <!--用bootstrap表格显示数据-->
+  <!--<welcome-file-list>-->
+    <!--<welcome-file>view/TableTest1.jsp</welcome-file>-->
+  <!--</welcome-file-list>-->
+
+  <!--用echarts与bootstrap显示表格-->
+  <!--<welcome-file-list>-->
+    <!--<welcome-file>view/TableJSTest.jsp</welcome-file>-->
+  <!--</welcome-file-list>-->
   <welcome-file-list>
-    <welcome-file>view/TableTest.jsp</welcome-file>
+    <welcome-file>view/TableJSTest2.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
